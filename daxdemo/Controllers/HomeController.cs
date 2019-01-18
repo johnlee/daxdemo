@@ -1,5 +1,6 @@
 ﻿using daxdemo.Data;
 using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
 
 namespace daxdemo.Controllers
 {
@@ -12,8 +13,9 @@ namespace daxdemo.Controllers
             _dbHandler = dbHandler;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            ViewData["DBCONNECT"] = await _dbHandler.ConnectTest();
             return View();
         }
 

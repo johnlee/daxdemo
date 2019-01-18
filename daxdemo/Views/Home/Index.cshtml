@@ -1,5 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
+    var dbconnect = (bool)ViewData["DBCONNECT"];
 }
 <div class="card-deck text-center">
     <div class="card">
@@ -21,7 +22,17 @@
     <div class="col col-lg-2">
     </div>
     <div class="col-md-auto">
-        <small>Database connection test: <span class="text-success">Success!</span></small>
+        <small>
+            Database connection test:
+            @if (dbconnect)
+            {
+                <span class="text-success">Success!</span>
+            }
+            else
+            {
+                <span class="text-danger">Failed!</span>
+            }
+        </small>
     </div>
     <div class="col col-lg-2">
     </div>

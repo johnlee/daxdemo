@@ -1,12 +1,14 @@
 ﻿@model daxdemo.Models.WriteViewModel
 @{
     ViewData["Title"] = "Write";
+    var message = ViewData["MESSAGE"] != null ? ViewData["MESSAGE"].ToString() : "";
+    var saved = ViewData["RESULT"] != null ? (bool)ViewData["RESULT"] : false;
 }
 <h4>Add a Widget</h4>
 <hr />
 <div class="row">
     <div class="col-md-12">
-        <form asp-action="Index">
+        <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Name" class="control-label"></label>
@@ -28,3 +30,15 @@
         </form>
     </div>
 </div>
+@if (!string.IsNullOrEmpty(message))
+{
+    <div class="alert alert-danger" role="alert">
+        @message
+    </div>
+}
+@if (saved)
+{
+    <div class="alert alert-success" role="alert">
+        Widget saved!
+    </div>
+}

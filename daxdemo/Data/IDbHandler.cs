@@ -5,6 +5,7 @@ namespace daxdemo.Data
 {
     public interface IDbHandler
     {
+        Task<bool> ConnectTest();
         Task<List<Widget>> Read();
         Task Write(Widget widget);
     }

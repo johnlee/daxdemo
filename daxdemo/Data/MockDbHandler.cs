@@ -15,15 +15,21 @@ namespace daxdemo.Data
             GenerateMockData(100); // TODO
         }
 
+        public async Task<bool> ConnectTest()
+        {
+            await Task.Delay(100);
+            return true;
+        }
+
         public async Task<List<Widget>> Read()
         {
-            await Task.Delay(10);
+            await Task.Delay(100);
             return _mockData;
         }
 
         public async Task Write(Widget widget)
         {
-            await Task.Delay(10);
+            await Task.Delay(100);
             _mockData.Add(widget);
         }
 
