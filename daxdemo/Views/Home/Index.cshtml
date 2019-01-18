@@ -1,4 +1,28 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-<h1>Widgets</h1>
+<div class="card-deck text-center">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Read</h3>
+            <p class="card-text">Read from DynamoDB utilizing DAX</p>
+            @Html.ActionLink("Read", "Index", "Read", null, new { @class="btn btn-primary" })
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">Write</h3>
+            <p class="card-text">Write a record to DynamoDB</p>
+            @Html.ActionLink("Write", "Index", "Write", null, new { @class = "btn btn-primary" })
+        </div>
+    </div>
+</div>
+<div class="row justify-content-md-center">
+    <div class="col col-lg-2">
+    </div>
+    <div class="col-md-auto">
+        <small>Database connection test: <span class="text-success">Success!</span></small>
+    </div>
+    <div class="col col-lg-2">
+    </div>
+</div>

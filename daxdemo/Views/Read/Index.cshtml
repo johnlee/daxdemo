@@ -1,0 +1,27 @@
+﻿@model daxdemo.Models.ReadViewModel
+
+@{
+    ViewData["Title"] = "Read";
+}
+<h4>Widgets</h4>
+<small>Execution time: <span class="text-success">.033s</span></small>
+<hr />
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Date</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var widget in Model.Widgets)
+        {
+            <tr>
+                <td>@widget.pk</td>
+                <td>@widget.sk</td>
+                <td>@widget.data</td>
+            </tr>
+        }
+    </tbody>
+</table>

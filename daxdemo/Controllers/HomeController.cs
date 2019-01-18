@@ -1,9 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using daxdemo.Data;
+using Microsoft.AspNetCore.Mvc;
 
 namespace daxdemo.Controllers
 {
     public class HomeController : Controller
     {
+        private IDbHandler _dbHandler;
+
+        public HomeController(IDbHandler dbHandler)
+        {
+            _dbHandler = dbHandler;
+        }
+
         public IActionResult Index()
         {
             return View();

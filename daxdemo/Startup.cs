@@ -32,6 +32,11 @@ namespace daxdemo
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddSingleton<IConfiguration>(Configuration);
+
+            services.AddScoped<Data.IDbHandler, Data.MockDbHandler>();
+            //services.AddScoped<Data.IDbHandler, Data.SqlHandler>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

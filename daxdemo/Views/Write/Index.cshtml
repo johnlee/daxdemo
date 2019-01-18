@@ -1,0 +1,30 @@
+﻿@model daxdemo.Models.WriteViewModel
+@{
+    ViewData["Title"] = "Write";
+}
+<h4>Add a Widget</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Date" class="control-label"></label>
+                <input asp-for="Date" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Description" class="control-label"></label>
+                <input asp-for="Description" class="form-control" />
+            </div>
+            <div class="form-group">
+                @Html.ActionLink("Cancel", "Index", "Home", null, new { @class = "btn btn-secondary" })
+                <button type="submit" class="btn btn-success">Add</button>
+            </div>
+        </form>
+    </div>
+</div>
