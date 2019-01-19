@@ -7,6 +7,6 @@ namespace daxdemo.Data
     {
         Task<bool> ConnectTest();
         Task<List<Widget>> Read();
-        Task Write(Widget widget);
+        Task<bool> Write(Widget widget);
     }
 }

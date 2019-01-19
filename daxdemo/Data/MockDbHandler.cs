@@ -27,10 +27,11 @@ namespace daxdemo.Data
             return _mockData;
         }
 
-        public async Task Write(Widget widget)
+        public async Task<bool> Write(Widget widget)
         {
             await Task.Delay(100);
             _mockData.Add(widget);
+            return true;
         }
 
         private void GenerateMockData(int count)
